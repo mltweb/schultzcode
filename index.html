@@ -963,6 +963,87 @@ html {
             font-size: 1rem;
         }
     }
+            /* Portfolio Styles */
+    .portfolio-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        padding: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .portfolio-card {
+        background: #112240;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    .portfolio-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(100, 255, 218, 0.2);
+    }
+
+    .video-container {
+        position: relative;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    }
+
+    .video-thumbnail {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 4rem;
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    .portfolio-card:hover .play-button {
+        color: #64ffda;
+        text-shadow: 0 0 30px rgba(100, 255, 218, 0.8);
+    }
+
+    .portfolio-card h3 {
+        padding: 15px 20px 0;
+        color: #64ffda;
+    }
+
+    .portfolio-card p {
+        padding: 10px 20px 20px;
+        color: #ccd6f6;
+        font-size: 0.9rem;
+    }
+
+    /* Video Iframe */
+    .video-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    @media (max-width: 768px) {
+        .portfolio-container {
+            grid-template-columns: 1fr;
+            padding: 15px;
+        }
+    }
+
     </style>
 </head>
 <body>
@@ -987,6 +1068,7 @@ html {
             <a href="#development-process">Process</a>
             <a href="#industries">Industries</a>
             <a href="#testimonials">Testimonials</a>
+            <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -1184,6 +1266,81 @@ html {
             <button onclick="nextTestimonial()">Next</button>
         </div>
     </section>
+
+    <!-- Portfolio Section -->
+<section id="portfolio">
+    <h2>Our Portfolio</h2>
+    <p>Explore some of our recent work and success stories.</p>
+
+    <div class="portfolio-container">
+        <!-- Video Card 1 -->
+    <div class="portfolio-card">
+        <div class="video-container" data-video-id="Si5uHorLtJE?start=2">
+            <img src="https://img.youtube.com/vi/Si5uHorLtJE/hqdefault.jpg"
+                 alt="Mobile App" class="video-thumbnail">
+            <div class="play-button"><i class="fas fa-play"></i></div>
+        </div>
+            <h3>Mobile Apps Development</h3>
+            <p>.Custom mobile app development process and services</p>
+        </div>
+
+        <!-- Video Card 2 -->
+    <div class="portfolio-card">
+        <div class="video-container" data-video-id="Hs2S-wLOuQU">
+            <img src="https://img.youtube.com/vi/Hs2S-wLOuQU/hqdefault.jpg"
+                 alt="What We Can Do?" class="video-thumbnail">
+            <div class="play-button"><i class="fas fa-play"></i></div>
+        </div>
+        <h3>What We Can Do?</h3>
+            <p>We will help you to take your business to a higher level with multiple systems technologies.</p>
+        </div>
+
+        <!-- Video Card 3 -->
+    <div class="portfolio-card">
+        <div class="video-container" data-video-id="pJMVByMvUwM">
+            <img src="https://img.youtube.com/vi/pJMVByMvUwM/hqdefault.jpg"
+                 alt="Online World" class="video-thumbnail">
+            <div class="play-button"><i class="fas fa-play"></i></div>
+        </div>
+            <h3>Mobile And Online World</h3>
+            <p>with the mobile market on the rise it is important not to loos touch.
+            SchultzCode Technologies</p>
+        </div>
+
+        <!-- Video Card 4 -->
+        <div class="portfolio-card">
+            <div class="video-container" data-video-id="YDQqmAzCxe8">
+                <img src="https://img.youtube.com/vi/YDQqmAzCxe8/hqdefault.jpg"
+                     alt="FactoMe" class="video-thumbnail">
+                <div class="play-button"><i class="fas fa-play"></i></div>
+            </div>
+            <h3>Now On Google Play</h3>
+            <p>FactoMe App</p>
+        </div>
+
+        <!-- Video Card 5 -->
+        <div class="portfolio-card">
+            <div class="video-container" data-video-id="ngk0yi8EFHI">
+                <img src="https://img.youtube.com/vi/ngk0yi8EFHI/hqdefault.jpg"
+                     alt="Diburstul" class="video-thumbnail">
+                <div class="play-button"><i class="fas fa-play"></i></div>
+            </div>
+            <h3>Cards Games</h3>
+            <p>Diburstul App</p>
+        </div>
+        <div class="portfolio-card">
+        <div class="video-container" data-video-id="MGlrfVK38qA">
+            <img src="https://img.youtube.com/vi/MGlrfVK38qA/hqdefault.jpg"
+                 alt="SchultzCode" class="video-thumbnail">
+            <div class="play-button"><i class="fas fa-play"></i></div>
+        </div>
+        <h3>SchultzCode</h3>
+        <p>Apps & Digital Projects
+</p>
+    </div>
+    </div>
+
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -1410,6 +1567,27 @@ locations.forEach(loc => {
             // Create new bubble every 2 seconds
             setInterval(createBubble, 2000);
         });
+    // Portfolio Video Handling
+    document.querySelectorAll('.video-container').forEach(container => {
+        container.addEventListener('click', function() {
+            // Pause all other videos
+            document.querySelectorAll('.video-iframe').forEach(iframe => {
+                iframe.src = '';
+            });
+
+            // Create new iframe if not exists
+            if (!this.querySelector('iframe')) {
+                const videoId = this.dataset.videoId;
+                const iframe = document.createElement('iframe');
+                iframe.className = 'video-iframe';
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
+                iframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+                iframe.allowFullscreen = true;
+                this.innerHTML = '';
+                this.appendChild(iframe);
+            }
+        });
+    });
 
     </script>
 </body>
