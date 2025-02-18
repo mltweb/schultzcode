@@ -409,20 +409,25 @@
         /* Sales Department Button */
         .sales-button-container {
             margin: 25px 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
         }
 
         .sales-button {
             background-color: #64ffda;
-            color: #0a192f;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-            display: inline-block;
-            border: 2px solid #64ffda;
+        color: #0a192f;
+        padding: 15px 30px;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        display: inline-block;
+        border: 2px solid #64ffda;
+        text-align: center;
+        margin: 0 15px; /* Added horizontal margin for better spacing */
         }
 
         .sales-button:hover {
@@ -949,7 +954,15 @@ html {
         body {
             overflow-x: hidden; /* Prevent horizontal scroll */
         }
-
+/* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .sales-button {
+            width: calc(100% - 30px); /* Full width with some spacing */
+            margin: 0 15px; /* Consistent spacing on mobile */
+            padding: 12px 20px;
+            font-size: 1rem;
+        }
+    }
     </style>
 </head>
 <body>
