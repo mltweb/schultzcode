@@ -1,6 +1,0 @@
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Use secret
-        run: echo "Token is ${{ secrets.MY_SECRET_TOKEN }}"
