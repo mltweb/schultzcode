@@ -4,544 +4,254 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - SchultzCode</title>
-    <link rel="icon" type="image/png" href="/schultzcode_logo.png">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --black: #000000;
-            --white: #ffffff;
-            --dark-gray: #111111;
-            --medium-gray: #333333;
-            --light-gray: #f5f5f5;
-            --accent-gray: #888888;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        /* General Styles */
         body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--black);
-            color: var(--white);
-            line-height: 1.6;
-        }
-
-        a {
-            color: var(--white);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--white);
-            opacity: 0.8;
-        }
-
-        /* Header */
-        .policy-header {
-            text-align: center;
-            padding: 60px 20px;
-            background-color: var(--dark-gray);
-            animation: fadeInDown 1s ease-out;
-        }
-
-        .policy-header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            color: var(--white);
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .policy-header p {
-            margin: 10px 0 0;
-            font-size: 1.2rem;
-            color: var(--white);
-            opacity: 0.8;
-        }
-
-        /* Navigation */
-        nav {
-            background-color: var(--black);
-            padding: 15px 20px;
-            position: relative;
-            animation: fadeIn 1.5s ease-out;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        nav a {
-            margin: 0 15px;
-            font-size: 1.1rem;
-            color: var(--white);
-            padding: 10px;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-
-        /* Burger Menu */
-        .burger {
-            display: none;
-            cursor: pointer;
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-        }
-
-        .burger div {
-            width: 25px;
-            height: 3px;
-            background-color: var(--white);
-            margin: 5px;
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
-
-        /* Burger Animation */
-        .burger.active .line1 {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .burger.active .line2 {
-            opacity: 0;
-        }
-
-        .burger.active .line3 {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-        /* Policy Content */
-        .policy-content {
-            max-width: 800px;
+            font-family: Georgia, serif;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 60px 20px;
-            text-align: left;
+            padding: 20px;
+            line-height: 1.6;
+            color: #000;
+            background: #fff;
+            transition: background 0.3s, color 0.3s;
         }
-
-        .policy-section {
-            margin-bottom: 50px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
+        body.dark {
+            color: #fff;
+            background: #111;
         }
-
-        .policy-section.visible {
-            opacity: 1;
-            transform: translateY(0);
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            position: relative;
         }
-
-        .policy-section h2 {
-            color: var(--white);
-            border-bottom: 2px solid var(--white);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
+        body.dark header {
+            border-bottom-color: #444;
         }
-
-        .policy-section p {
-            font-size: 1.1rem;
-            color: var(--white);
-            opacity: 0.9;
-            line-height: 1.8;
+        .theme-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: none;
+            border: 1px solid #000;
+            color: #000;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 4px;
         }
-
-        .policy-list {
-            margin: 20px 0;
+        body.dark .theme-toggle {
+            border-color: #fff;
+            color: #fff;
+        }
+        header a {
+            color: #000;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+        body.dark header a {
+            color: #fff;
+        }
+        h1 {
+            font-size: 1.5rem;
+        }
+        h2 {
+            font-size: 1.2rem;
+            margin-top: 30px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+        }
+        body.dark h2 {
+            border-bottom-color: #fff;
+        }
+        p, li {
+            font-size: 0.95rem;
+        }
+        ul {
             padding-left: 20px;
         }
-
-        .policy-list li {
-            margin-bottom: 15px;
-            line-height: 1.6;
-            color: var(--white);
-            opacity: 0.9;
-        }
-
-        .emphasis-box {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 25px;
-            border-radius: 10px;
-            margin: 25px 0;
-            border-left: 4px solid var(--white);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .emphasis-box h3 {
-            color: var(--white);
-            margin-top: 0;
-            font-size: 1.4rem;
-        }
-
-        .third-party-list {
-            margin: 15px 0;
-        }
-
-        .third-party-item {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .third-party-item strong {
-            color: var(--white);
-            display: block;
+        li {
             margin-bottom: 8px;
-            font-size: 1.1rem;
         }
-
-        .contact-email {
-            color: var(--white);
-            font-weight: bold;
+        a {
+            color: #000;
+            text-decoration: underline;
         }
-
-        .logo-button {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1001;
-            transition: var(--transition);
+        body.dark a {
+            color: #fff;
         }
-
-        .logo-button img {
-            height: 40px;
-            width: auto;
-            border-radius: 50%;
-            border: 2px solid var(--white);
-            padding: 3px;
-            transition: var(--transition);
-        }
-
-        .logo-button:hover img {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-        }
-
-        /* Footer */
         footer {
-            background-color: var(--dark-gray);
-            padding: 40px 20px;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
             text-align: center;
-            color: var(--white);
-            animation: fadeInUp 1s ease-out;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
         }
-
-        footer p {
-            margin: 0 0 15px;
-            opacity: 0.8;
+        body.dark footer {
+            border-top-color: #444;
         }
-
-        .footer-links a {
-            margin: 0 10px;
-            color: var(--white);
-            opacity: 0.8;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-        }
-
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
+        @media (max-width: 600px) {
+            header {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .theme-toggle {
+                position: relative;
             }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .policy-header h1 {
-                font-size: 2rem;
-            }
-
-            .policy-header p {
-                font-size: 1rem;
-            }
-
-            .policy-content {
-                padding: 40px 20px;
-            }
-
-            .policy-section h2 {
-                font-size: 1.5rem;
-            }
-
-            .policy-section p {
-                font-size: 1rem;
-            }
-
-            .emphasis-box {
-                padding: 20px;
-            }
-
-            /* Burger Menu Responsive */
-            .burger {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                right: -100%;
-                top: 70px;
-                height: calc(100vh - 70px);
-                background-color: var(--dark-gray);
-                flex-direction: column;
-                align-items: center;
+            nav {
+                order: 3;
                 width: 100%;
-                padding: 20px 0;
-                transition: right 0.3s ease-in-out;
-                z-index: 999;
-                backdrop-filter: blur(10px);
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            nav a {
-                margin: 15px 0;
-                font-size: 1.2rem;
-            }
-
-            .logo-button {
-                left: 10px;
-            }
-
-            .logo-button img {
-                height: 35px;
+                margin-top: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <header class="policy-header">
-        <h1>We Value Your Privacy</h1>
-        <p>View Our Privacy Policy Statement</p>
+    <header>
+        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        <h1>Privacy Policy</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="privacy-policy.html">Privacy</a>
+            <a href="terms-conditions.html">Terms</a>
+            <a href="refund-policy.html">Refund</a>
+        </nav>
     </header>
 
-    <nav>
-        <a href="index.html" class="logo-button">
-            <img src="schultzcode_logo.png" alt="Home">
-        </a>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-        <div class="nav-links">
-            <a href="index.html#about">About</a>
-            <a href="index.html#services">Services</a>
-            <a href="index.html#process">Process</a>
-            <a href="index.html#industries">Industries</a>
-            <a href="index.html#testimonials">Testimonials</a>
-            <a href="index.html#contact">Contact</a>
-        </div>
-    </nav>
+    <h2>To whom this policy applies</h2>
+    <p>This privacy statement applies to individuals who interact with our website, subscribe to any of our products, request information, or use the chat support.</p>
 
-    <div class="policy-content">
-        <div class="policy-section">
-            <p>This privacy policy outlines what data SchultzCode Technologies Pvt. Ltd. (herein referred to as "SchultzCode", "We", "Our", or "Us") collects, stores, and processes about you. It also explains your rights to your data and how you can contact us if you have any questions. We reserve the right to alter this privacy statement at our discretion and encourage you to check this section from time to time to be aware of any changes.</p>
-        </div>
+    <h2>How we collect data</h2>
+    <p><strong>1. Data we request:</strong> Name, Country, Email Id, Skype Id, Phone Number, and other information you choose to share.</p>
+    <p><strong>2. Cookies:</strong> Cookies help analyze web traffic. You can opt out by changing browser settings or browsing in anonymous mode.</p>
+    <p><strong>Third-party tools:</strong> Google Analytics, Intercom, Lucky Orange, MailChimp, Social plugins.</p>
 
-        <div class="policy-section">
-            <h2>To whom this policy applies</h2>
-            <p>This privacy statement applies to individuals ("users" or "you") who interact with our website, subscribe to any of our products, request information, or use the chat support (herein collectively referred to as "services").</p>
-        </div>
+    <h2>How we use your data</h2>
+    <ul>
+        <li>To provide and maintain our services</li>
+        <li>To notify you about changes to our services</li>
+        <li>To provide customer support</li>
+        <li>To improve our services</li>
+        <li>To monitor usage</li>
+        <li>To detect and prevent technical issues</li>
+    </ul>
 
-        <div class="policy-section">
-            <h2>How we collect data</h2>
-            <p>Depending on services you use, we collect data from one or more of these three sources:</p>
+    <h2>Data retention</h2>
+    <p>We will retain your personal information only for as long as necessary for the purposes set out in this Privacy Policy.</p>
 
-            <div class="emphasis-box">
-                <h3>1. Data we request:</h3>
-                <p>When you request any of our services, we may ask, store, and process any/all of these data categories:</p>
-                <ul class="policy-list">
-                    <li>Your Name</li>
-                    <li>Your Country</li>
-                    <li>Your Email Id</li>
-                    <li>Your Skype Id</li>
-                    <li>Your Phone Number</li>
-                    <li>Other information that you choose to share</li>
-                </ul>
-            </div>
+    <h2>Your data protection rights</h2>
+    <ul>
+        <li>The right to access, update or delete your information</li>
+        <li>The right of rectification</li>
+        <li>The right to object</li>
+        <li>The right of restriction</li>
+        <li>The right to data portability</li>
+        <li>The right to withdraw consent</li>
+    </ul>
 
-            <div class="emphasis-box">
-                <h3>2. Cookies:</h3>
-                <p>Cookies are small files placed on your computer when you first visit our website that helps analyze web traffic and tracks you across the web. The collection of this data is based on "implied consent", i.e we assume you agree to our terms of usage unless you explicitly opt out. You can opt out by:</p>
-                <ul class="policy-list">
-                    <li>Changing your browser settings to not accept cookies</li>
-                    <li>Browsing in anonymous mode</li>
-                    <li>Not using our website</li>
-                </ul>
-
-                <div class="third-party-list">
-                    <h4>Third-party tools we use:</h4>
-                    <div class="third-party-item">
-                        <strong>Google Analytics</strong>
-                        <p>Collects device/browser data, IP address, and on-site activities. <a href="#" style="color: var(--white);">View their policy</a></p>
-                    </div>
-                    <div class="third-party-item">
-                        <strong>Intercom</strong>
-                        <p>Customer support tool. <a href="#" style="color: var(--white);">View their policy</a></p>
-                    </div>
-                    <div class="third-party-item">
-                        <strong>Lucky Orange</strong>
-                        <p>Usage tracking and session recording. <a href="#" style="color: var(--white);">View their policy</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="emphasis-box">
-                <h3>3. External tools:</h3>
-                <div class="third-party-list">
-                    <div class="third-party-item">
-                        <strong>MailChimp</strong>
-                        <p>Email marketing and tracking. <a href="#" style="color: var(--white);">View their policy</a></p>
-                    </div>
-                    <div class="third-party-item">
-                        <strong>Social plugins</strong>
-                        <p>Facebook, Twitter, LinkedIn, YouTube integrations. <a href="#" style="color: var(--white);">View policies</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="policy-section">
-            <h2>How we use your data</h2>
-            <p>We use the data we collect for the following purposes:</p>
-            <ul class="policy-list">
-                <li>To provide and maintain our services</li>
-                <li>To notify you about changes to our services</li>
-                <li>To provide customer support</li>
-                <li>To gather analysis or valuable information so that we can improve our services</li>
-                <li>To monitor the usage of our services</li>
-                <li>To detect, prevent and address technical issues</li>
-                <li>To provide you with news, special offers and general information about other goods, services and events which we offer</li>
-            </ul>
-        </div>
-
-        <div class="policy-section">
-            <h2>Data retention</h2>
-            <p>We will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies.</p>
-        </div>
-
-        <div class="policy-section">
-            <h2>Your data protection rights</h2>
-            <p>You have certain data protection rights. SchultzCode aims to take reasonable steps to allow you to correct, amend, delete, or limit the use of your Personal Data.</p>
-            <p>If you wish to be informed what Personal Data we hold about you and if you want it to be removed from our systems, please contact us.</p>
-            <p>In certain circumstances, you have the following data protection rights:</p>
-            <ul class="policy-list">
-                <li>The right to access, update or to delete the information we have on you.</li>
-                <li>The right of rectification.</li>
-                <li>The right to object.</li>
-                <li>The right of restriction.</li>
-                <li>The right to data portability.</li>
-                <li>The right to withdraw consent.</li>
-            </ul>
-        </div>
-
-        <div class="policy-section">
-            <h2>Contact us</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us:</p>
-            <ul class="policy-list">
-                <li>By email: <span class="contact-email">contact@schultzcode.com</span></li>
-                <li>By visiting this page on our website: <a href="index.html#contact">Contact Us</a></li>
-                <li>By phone number: +420 774 559 158</li>
-            </ul>
-        </div>
-    </div>
+    <h2>Contact us</h2>
+    <p>Email: contact@schultzcode.com</p>
+    <p>Phone: +420 774 559 158</p>
 
     <footer>
         <p>&copy; 2026 SchultzCode Technologies. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="privacy-policy.html">Privacy Policy</a> |
-            <a href="terms-conditions.html">Terms & Conditions</a> |
-            <a href="refund-policy.html">Refund Policy</a>
-        </div>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-conditions.html">Terms & Conditions</a>
+        <a href="refund-policy.html">Refund Policy</a>
     </footer>
 
     <script>
-        // Burger Menu Toggle
-        const burger = document.querySelector('.burger');
-        const navLinks = document.querySelector('.nav-links');
-        const navAnchors = document.querySelectorAll('.nav-links a');
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.querySelector('.theme-toggle');
+            body.classList.toggle('dark');
+            const isDark = body.classList.contains('dark');
+            btn.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+        
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark');
+            document.querySelector('.theme-toggle').textContent = '☀️';
+        }
 
-        burger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            burger.classList.toggle('active');
-        });
+        function getCountryFlag(countryCode) {
+            if (!countryCode) return "";
+            const codePoints = countryCode.toUpperCase().split('')
+                .map(char => 127397 + char.charCodeAt());
+            return String.fromCodePoint(...codePoints);
+        }
+    </script>
 
-        // Close menu when clicking a link (mobile)
-        navAnchors.forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    navLinks.classList.remove('active');
-                    burger.classList.remove('active');
-                    
-                    // Handle index.html navigation
-                    if(link.href.includes('index.html')) {
-                        window.location.href = link.href;
-                    }
-                }
-            });
-        });
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!navigator.webdriver) {
+                const ua = navigator.userAgent;
 
-        // Scroll Animations
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.policy-section');
+                const deviceInfo2 = {userAgent: navigator.userAgent,
+                                     referrer: document.referrer || "Direct"
+                };
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
+                let browser = '🌐 ';
+                if (/brave/i.test(ua)) browser += 'Brave';
+                else if (/instagram/i.test(ua)) browser += 'Instagram Browser';
+                else if (/chrome/i.test(ua)) browser += 'Chrome';
+                else if (/safari/i.test(ua)) browser += 'Safari';
+                else if (/firefox/i.test(ua)) browser += 'Firefox';
+                else if (/edge/i.test(ua)) browser += 'Edge';
+                else browser += 'Browser';
 
-            sections.forEach(section => observer.observe(section));
+                const language = navigator.language || 'Unknown';
+                const languages = navigator.languages ? navigator.languages.join(', ') : language;
+
+                fetch('https://ipapi.co/json/')
+                    .then(res => {
+                        if (!res.ok) throw new Error('IP API failed');
+                        return res.json();
+                    })
+                    .then(data => {
+                        const countryFlag = getCountryFlag(data.country_code);
+                        const mapLink = data.latitude && data.longitude
+                            ? `https://maps.google.com?q=${data.latitude},${data.longitude}`
+                            : `https://maps.google.com/maps?q=${encodeURIComponent(data.city || '')}`;
+
+                        const message = `🐋 <b>New Visitor on SchultzCode 🐋!</b>\n\n` +
+                                       `📅 <b>Time:</b> ${new Date().toLocaleString()}\n` +
+                                       `📍 <b>Location:</b> ${data.city || 'Unknown'}, ${data.country || 'Unknown'} ${countryFlag} (${data.country_code || '??'})\n` +
+                                       `🗺️ <b>Map:</b> <a href="${mapLink}">View Location</a>\n` +
+                                       `🆔 <b>IP:</b> <code>${data.ip}</code>\n` +
+                                       `📡 <b>ISP:</b> ${data.org || 'Unknown'}\n` +
+                                       `🌍 <b>Language:</b> ${language} (${languages})\n\n` +
+                                       `📱 <b>Device:</b> ${deviceInfo2.userAgent.substring(0, 55)}...\n` +
+                                       `🔗 <b>Referrer:</b> ${deviceInfo2.referrer}\n` +
+                                       `🌐 ${browser}\n` +
+                                       `🖥️ <b>Screen:</b> ${screen.width}x${screen.height}`;
+
+                        const botToken = "8096072967:AAF01pSw9Vr0tMd1qNJtNrOaUAfoBdBiuQs";
+                        const chatId = "5672223315";
+
+                        return fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                chat_id: chatId,
+                                text: message,
+                                parse_mode: 'HTML',
+                                disable_web_page_preview: false
+                            })
+                        });
+                    })
+                    .then(res => {
+                        if (!res.ok) throw new Error('Telegram API failed');
+                        console.log('Notification sent successfully');
+                    })
+                    .catch(err => {
+                        console.error('Error:', err);
+                    });
+            }
         });
     </script>
 </body>

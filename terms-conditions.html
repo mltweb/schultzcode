@@ -4,592 +4,245 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms & Conditions - SchultzCode</title>
-    <link rel="icon" type="image/png" href="/schultzcode_logo.png">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --black: #000000;
-            --white: #ffffff;
-            --dark-gray: #111111;
-            --medium-gray: #333333;
-            --light-gray: #f5f5f5;
-            --accent-gray: #888888;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        /* General Styles */
         body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--black);
-            color: var(--white);
-            line-height: 1.6;
-        }
-
-        a {
-            color: var(--white);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--white);
-            opacity: 0.8;
-        }
-
-        /* Header */
-        .policy-header {
-            text-align: center;
-            padding: 60px 20px;
-            background-color: var(--dark-gray);
-            animation: fadeInDown 1s ease-out;
-        }
-
-        .policy-header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            color: var(--white);
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .policy-header p {
-            margin: 10px 0 0;
-            font-size: 1.2rem;
-            color: var(--white);
-            opacity: 0.8;
-        }
-
-        /* Navigation */
-        nav {
-            background-color: var(--black);
-            padding: 15px 20px;
-            position: relative;
-            animation: fadeIn 1.5s ease-out;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        nav a {
-            margin: 0 15px;
-            font-size: 1.1rem;
-            color: var(--white);
-            padding: 10px;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-
-        /* Burger Menu */
-        .burger {
-            display: none;
-            cursor: pointer;
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-        }
-
-        .burger div {
-            width: 25px;
-            height: 3px;
-            background-color: var(--white);
-            margin: 5px;
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
-
-        /* Burger Animation */
-        .burger.active .line1 {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .burger.active .line2 {
-            opacity: 0;
-        }
-
-        .burger.active .line3 {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-        /* Policy Content */
-        .policy-content {
-            max-width: 800px;
+            font-family: Georgia, serif;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 60px 20px;
-            text-align: left;
-        }
-
-        .policy-section {
-            margin-bottom: 50px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
-
-        .policy-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .policy-section h2 {
-            color: var(--white);
-            border-bottom: 2px solid var(--white);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-        }
-
-        .policy-section p {
-            font-size: 1.1rem;
-            color: var(--white);
-            opacity: 0.9;
-            line-height: 1.8;
-        }
-
-        .policy-list {
-            margin: 20px 0;
-            padding-left: 20px;
-        }
-
-        .policy-list li {
-            margin-bottom: 15px;
+            padding: 20px;
             line-height: 1.6;
-            color: var(--white);
-            opacity: 0.9;
+            color: #000;
+            background: #fff;
+            transition: background 0.3s, color 0.3s;
         }
-
-        .emphasis-box {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 25px;
-            border-radius: 10px;
-            margin: 25px 0;
-            border-left: 4px solid var(--white);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        body.dark {
+            color: #fff;
+            background: #111;
         }
-
-        .emphasis-box h3 {
-            color: var(--white);
-            margin-top: 0;
-            font-size: 1.4rem;
-        }
-
-        .clause-list {
-            margin: 20px 0;
-            padding-left: 30px;
-        }
-
-        .clause-item {
-            margin-bottom: 25px;
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
             position: relative;
-            padding-left: 20px;
-            color: var(--white);
-            opacity: 0.9;
-            line-height: 1.7;
         }
-
-        .clause-item::before {
-            content: "•";
-            color: var(--white);
+        body.dark header {
+            border-bottom-color: #444;
+        }
+        .theme-toggle {
             position: absolute;
-            left: 0;
-            font-size: 1.5rem;
-            line-height: 1.2;
+            top: 0;
+            right: 0;
+            background: none;
+            border: 1px solid #000;
+            color: #000;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 4px;
         }
-
-        .legal-highlight {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-left: 3px solid var(--white);
-            margin: 20px 0;
-            border-radius: 8px;
-            backdrop-filter: blur(10px);
+        body.dark .theme-toggle {
+            border-color: #fff;
+            color: #fff;
         }
-
-        .payment-tier {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 8px;
-            margin: 15px 0;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .payment-tier h3 {
-            color: var(--white);
-            margin-top: 0;
-        }
-
-        .jurisdiction-notice {
-            text-align: center;
-            padding: 30px;
-            border: 2px solid var(--white);
-            border-radius: 10px;
-            margin: 30px 0;
-            background-color: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-        }
-
-        .jurisdiction-notice h3 {
-            color: var(--white);
-            margin-top: 0;
-        }
-
-        .contact-email {
-            color: var(--white);
-            font-weight: bold;
-        }
-
-        .logo-button {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1001;
-            transition: var(--transition);
-        }
-
-        .logo-button img {
-            height: 40px;
-            width: auto;
-            border-radius: 50%;
-            border: 2px solid var(--white);
-            padding: 3px;
-            transition: var(--transition);
-        }
-
-        .logo-button:hover img {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-gray);
-            padding: 40px 20px;
-            text-align: center;
-            color: var(--white);
-            animation: fadeInUp 1s ease-out;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        footer p {
-            margin: 0 0 15px;
-            opacity: 0.8;
-        }
-
-        .footer-links a {
+        header a {
+            color: #000;
+            text-decoration: underline;
             margin: 0 10px;
-            color: var(--white);
-            opacity: 0.8;
-            transition: var(--transition);
         }
-
-        .footer-links a:hover {
-            opacity: 1;
+        body.dark header a {
+            color: #fff;
         }
-
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        h1 {
+            font-size: 1.5rem;
         }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        h2 {
+            font-size: 1.2rem;
+            margin-top: 30px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
         }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        body.dark h2 {
+            border-bottom-color: #fff;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .policy-header h1 {
-                font-size: 2rem;
+        p, li {
+            font-size: 0.95rem;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        body.dark footer {
+            border-top-color: #444;
+        }
+        footer a {
+            margin: 0 10px;
+            color: #000;
+            text-decoration: underline;
+        }
+        body.dark footer a {
+            color: #fff;
+        }
+        @media (max-width: 600px) {
+            header {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
             }
-
-            .policy-header p {
-                font-size: 1rem;
+            .theme-toggle {
+                position: relative;
             }
-
-            .policy-content {
-                padding: 40px 20px;
-            }
-
-            .policy-section h2 {
-                font-size: 1.5rem;
-            }
-
-            .policy-section p {
-                font-size: 1rem;
-            }
-
-            .emphasis-box, .legal-highlight, .payment-tier {
-                padding: 20px;
-            }
-
-            .jurisdiction-notice {
-                padding: 20px;
-            }
-
-            /* Burger Menu Responsive */
-            .burger {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                right: -100%;
-                top: 70px;
-                height: calc(100vh - 70px);
-                background-color: var(--dark-gray);
-                flex-direction: column;
-                align-items: center;
+            nav {
+                order: 3;
                 width: 100%;
-                padding: 20px 0;
-                transition: right 0.3s ease-in-out;
-                z-index: 999;
-                backdrop-filter: blur(10px);
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            nav a {
-                margin: 15px 0;
-                font-size: 1.2rem;
-            }
-
-            .logo-button {
-                left: 10px;
-            }
-
-            .logo-button img {
-                height: 35px;
+                margin-top: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <header class="policy-header">
+    <header>
+        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
         <h1>Terms & Conditions</h1>
-        <p>Standard Terms of Working With SchultzCode</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="privacy-policy.html">Privacy</a>
+            <a href="terms-conditions.html">Terms</a>
+            <a href="refund-policy.html">Refund</a>
+        </nav>
     </header>
 
-    <nav>
-        <a href="index.html" class="logo-button">
-            <img src="schultzcode_logo.png" alt="Home">
-        </a>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-        <div class="nav-links">
-            <a href="index.html#about">About</a>
-            <a href="index.html#services">Services</a>
-            <a href="index.html#process">Process</a>
-            <a href="index.html#industries">Industries</a>
-            <a href="index.html#testimonials">Testimonials</a>
-            <a href="index.html#contact">Contact</a>
-        </div>
-    </nav>
+    <h2>General Work Terms</h2>
+    <ul>
+        <li>All site content will be provided by the client prior to commencing work.</li>
+        <li>Client is responsible for proper backups. SchultzCode is not liable for any loss or damage to existing data.</li>
+        <li>Contract excludes data entry, hosting, and custom artwork unless specifically agreed upon in writing.</li>
+        <li>Client has 7 days to review delivered work. Silence will be considered acceptance.</li>
+        <li>Client retains copyright but grants SchultzCode publication rights.</li>
+    </ul>
 
-    <div class="policy-content">
-        <div class="policy-section">
-            <h2>General Work Terms</h2>
-            <ul class="clause-list">
-                <li class="clause-item">All site content (text and multimedia) will be the sole responsibility of the client to provide to SchultzCode. Such should be provided prior to commencing work.</li>
-                <li class="clause-item">Client is responsible for proper backups. SchultzCode is not liable for any loss or damage to existing data.</li>
-                <li class="clause-item">Contract excludes data entry, hosting, and custom artwork unless specifically agreed upon in writing.</li>
-                <li class="clause-item">Deliveries may be extended due to unforeseen circumstances including deployment issues, third-party dependencies, or resource unavailability.</li>
-                <li class="clause-item">Client has 7 days to review delivered work. Silence will be considered acceptance.</li>
-                <li class="clause-item">Client retains copyright but grants SchultzCode publication rights. Client must obtain third-party permissions.</li>
-                <li class="clause-item">SchultzCode is not responsible for post-deployment alterations made by client or third parties.</li>
-            </ul>
-        </div>
+    <h2>Payments</h2>
+    <p>Accepted methods: Cheque, Cash, Bank Transfers.</p>
+    <p><strong>Cancellation Policy:</strong> Cancellation fee equals value of completed work. Non-payment may result in legal action.</p>
 
-        <div class="policy-section">
-            <h2>Payments</h2>
-            <div class="payment-tier">
-                <h3>Payment Methods</h3>
-                <p>Accepted methods: Cheque, Cash, Bank Transfers (subject to change without notice)</p>
-            </div>
+    <h2>Support</h2>
+    <p>Free support for first month post-launch. Afterwards, support is charged per selected package. Excludes architectural changes and enhancements.</p>
 
-            <div class="payment-tier">
-                <h3>Cancellation Policy</h3>
-                <ul class="policy-list">
-                    <li>Cancellation fee = value of completed work</li>
-                    <li>Non-payment may result in legal action</li>
-                </ul>
-            </div>
-        </div>
+    <h2>Third-Party Services</h2>
+    <p>Client is responsible for third-party licensing. No warranties for third-party products.</p>
 
-        <div class="policy-section">
-            <h2>Support & Third-Party</h2>
-            <div class="legal-highlight">
-                <h3>Support Scope</h3>
-                <ul class="policy-list">
-                    <li>Free support for first month post-launch</li>
-                    <li>Afterwards: Charged per selected package</li>
-                    <li>Excludes architectural changes and enhancements</li>
-                </ul>
-            </div>
+    <h2>Liability Limitations</h2>
+    <p>SchultzCode excludes liability for: service availability/accuracy, data/content loss, third-party service failures, and consequential damages.</p>
 
-            <div class="legal-highlight">
-                <h3>Third-Party Services</h3>
-                <ul class="policy-list">
-                    <li>Client responsible for third-party licensing</li>
-                    <li>No warranties for third-party products</li>
-                    <li>Upgrades considered scope changes</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="policy-section">
-            <h2>Re-work & Billing</h2>
-            <div class="emphasis-box">
-                <ul class="policy-list">
-                    <li>Additional features billed separately</li>
-                    <li>Minor changes free unless abused ($20-50/hr if abused)</li>
-                    <li>Post-approval changes considered add-ons</li>
-                    <li>Full payment required without deductions</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="policy-section">
-            <h2>Liability Limitations</h2>
-            <div class="jurisdiction-notice">
-                <h3>Important Notice</h3>
-                <p>SchultzCode excludes liability for:</p>
-                <ul class="policy-list">
-                    <li>Service availability/accuracy</li>
-                    <li>Data/content loss</li>
-                    <li>Third-party service failures</li>
-                    <li>Consequential damages (except personal injury)</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="policy-section">
-            <h2>Approvals & Delivery</h2>
-            <ul class="clause-list">
-                <li class="clause-item">Phased approvals required for project progression</li>
-                <li class="clause-item">Final deployment after full payment</li>
-                <li class="clause-item">Code ownership transfers after final payment</li>
-                <li class="clause-item">SchultzCode retains portfolio rights unless otherwise agreed</li>
-            </ul>
-        </div>
-
-        <div class="policy-section">
-            <h2>Timescale</h2>
-            <div class="emphasis-box">
-                <ul class="policy-list">
-                    <li>Project starts after 40-50% deposit and content receipt</li>
-                    <li>Delays possible due to unforeseen circumstances</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="policy-section">
-            <h2>Jurisdiction</h2>
-            <div class="jurisdiction-notice">
-                <p>Governed by Israeli Law<br>
-                Exclusive jurisdiction of Israeli courts<br>
-                Order placement confirms acceptance</p>
-            </div>
-        </div>
-
-        <div class="policy-section">
-            <h2>Severability</h2>
-            <div class="legal-highlight">
-                <p>If any provision is invalid, remainder stays effective<br>
-                Invalid provisions replaced with valid equivalents</p>
-            </div>
-        </div>
-    </div>
+    <h2>Jurisdiction</h2>
+    <p>Governed by Israeli Law. Exclusive jurisdiction of Israeli courts.</p>
 
     <footer>
         <p>&copy; 2026 SchultzCode Technologies. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="privacy-policy.html">Privacy Policy</a> |
-            <a href="terms-conditions.html">Terms & Conditions</a> |
-            <a href="refund-policy.html">Refund Policy</a>
-        </div>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-conditions.html">Terms & Conditions</a>
+        <a href="refund-policy.html">Refund Policy</a>
     </footer>
 
     <script>
-        // Burger Menu Toggle
-        const burger = document.querySelector('.burger');
-        const navLinks = document.querySelector('.nav-links');
-        const navAnchors = document.querySelectorAll('.nav-links a');
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.querySelector('.theme-toggle');
+            body.classList.toggle('dark');
+            const isDark = body.classList.contains('dark');
+            btn.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+        
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark');
+            document.querySelector('.theme-toggle').textContent = '☀️';
+        }
 
-        burger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            burger.classList.toggle('active');
-        });
+        function getCountryFlag(countryCode) {
+            if (!countryCode) return "";
+            const codePoints = countryCode.toUpperCase().split('')
+                .map(char => 127397 + char.charCodeAt());
+            return String.fromCodePoint(...codePoints);
+        }
+    </script>
 
-        // Close menu when clicking a link (mobile)
-        navAnchors.forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    navLinks.classList.remove('active');
-                    burger.classList.remove('active');
-                    
-                    // Handle index.html navigation
-                    if(link.href.includes('index.html')) {
-                        window.location.href = link.href;
-                    }
-                }
-            });
-        });
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!navigator.webdriver) {
+                const ua = navigator.userAgent;
 
-        // Scroll Animations
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.policy-section');
+                const deviceInfo2 = {userAgent: navigator.userAgent,
+                                     referrer: document.referrer || "Direct"
+                };
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
+                let browser = '🌐 ';
+                if (/brave/i.test(ua)) browser += 'Brave';
+                else if (/instagram/i.test(ua)) browser += 'Instagram Browser';
+                else if (/chrome/i.test(ua)) browser += 'Chrome';
+                else if (/safari/i.test(ua)) browser += 'Safari';
+                else if (/firefox/i.test(ua)) browser += 'Firefox';
+                else if (/edge/i.test(ua)) browser += 'Edge';
+                else browser += 'Browser';
 
-            sections.forEach(section => observer.observe(section));
+                const language = navigator.language || 'Unknown';
+                const languages = navigator.languages ? navigator.languages.join(', ') : language;
+
+                fetch('https://ipapi.co/json/')
+                    .then(res => {
+                        if (!res.ok) throw new Error('IP API failed');
+                        return res.json();
+                    })
+                    .then(data => {
+                        const countryFlag = getCountryFlag(data.country_code);
+                        const mapLink = data.latitude && data.longitude
+                            ? `https://maps.google.com?q=${data.latitude},${data.longitude}`
+                            : `https://maps.google.com/maps?q=${encodeURIComponent(data.city || '')}`;
+
+                        const message = `🐋 <b>New Visitor on SchultzCode 🐋!</b>\n\n` +
+                                       `📅 <b>Time:</b> ${new Date().toLocaleString()}\n` +
+                                       `📍 <b>Location:</b> ${data.city || 'Unknown'}, ${data.country || 'Unknown'} ${countryFlag} (${data.country_code || '??'})\n` +
+                                       `🗺️ <b>Map:</b> <a href="${mapLink}">View Location</a>\n` +
+                                       `🆔 <b>IP:</b> <code>${data.ip}</code>\n` +
+                                       `📡 <b>ISP:</b> ${data.org || 'Unknown'}\n` +
+                                       `🌍 <b>Language:</b> ${language} (${languages})\n\n` +
+                                       `📱 <b>Device:</b> ${deviceInfo2.userAgent.substring(0, 55)}...\n` +
+                                       `🔗 <b>Referrer:</b> ${deviceInfo2.referrer}\n` +
+                                       `🌐 ${browser}\n` +
+                                       `🖥️ <b>Screen:</b> ${screen.width}x${screen.height}`;
+
+                        const botToken = "8096072967:AAF01pSw9Vr0tMd1qNJtNrOaUAfoBdBiuQs";
+                        const chatId = "5672223315";
+
+                        return fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                chat_id: chatId,
+                                text: message,
+                                parse_mode: 'HTML',
+                                disable_web_page_preview: false
+                            })
+                        });
+                    })
+                    .then(res => {
+                        if (!res.ok) throw new Error('Telegram API failed');
+                        console.log('Notification sent successfully');
+                    })
+                    .catch(err => {
+                        console.error('Error:', err);
+                    });
+            }
         });
     </script>
 </body>
